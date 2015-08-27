@@ -1,0 +1,561 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css')
+    title Twister Flux
+  body
+
+    // Button to jump to 1
+    button.btn-position(style="left:0.5rem;right:auto;" title="First slide" onclick="deck.slide(0);").
+      &#945;&#8592;
+    // Button to jump to -1
+    button.btn-position(style="left:auto;right:0.5rem;" title="Last slide" onclick="deck.slide(deck.slides.length-1);").
+      &#8594;&#969;
+    // The page number
+    span#txt-position
+
+    article#presentation
+
+      section
+        hr/
+        hr/
+        hr/
+        h1(style="color:#031634;") Twister and Flux
+        hr/
+        hr/
+        hr/
+        h2 by Cristi Constantin
+
+
+      section
+        h1 Hello
+        hr/
+        h1 Let's meet
+        hr/
+        h1 . . .
+
+
+      section.bg-white
+        h1 &#8759; Summary
+        hr/
+        ul
+          li.bullet About Twister
+          li.bullet About Flux
+          li.bullet Code examples
+
+
+      section.bg-white
+        h1(style="color:#ef6d2c;") &#8759; About &nbsp;
+        hr/
+        img(src="img/twister.jpg", style="width:300px;height:auto;margin:0")
+
+
+      section
+        h2 What is Twister #1
+        ul
+          li Is a testing automation framework
+          li Free and open source
+          li Multi-user, each user has roles
+          li Distributed processes
+          li Real monitoring of logs
+          li Can send report e-mails
+          li Can save the results in a database
+          li The tests can be written in <b>Python</b>, <b>TCL</b>, or <b>Perl</b>
+          li Has a few plugins and libraries by default
+          li Can be easily extended
+          li Can be integrated with other tools
+
+
+      section
+        h2 What is Twister #2
+        ul
+          li The tests are grouped in suites
+          li The suites are saved in projects
+          li Test statuses: <small>pending, pass, fail, skip, abort, not executed, timeout, waiting</small>
+          li Pre/ Post execution scripts
+          li Setup/ Teardown tests for each suite
+          li Mandatory/ Optional tests
+          li Pass/ Fail/ Waiting dependency between tests
+          li Delay between tests
+          li Global variables and structures saved between tests
+          li "Panic detect" expressions
+          li Server and Client written in Python
+          li Old unterface written in Java/ new interface is HTML
+
+
+      section.bg-white
+        h1 &#8759; The old GUI (java)
+
+
+      section
+        hr/
+        img.gui(src="img/java1.png")
+
+      section
+        hr/
+        img.gui(src="img/java2.png")
+
+      section
+        hr/
+        img.gui(src="img/java3.png")
+
+      section
+        hr/
+        img.gui(src="img/java4.png")
+
+      section
+        hr/
+        img.gui(src="img/java5.png")
+
+
+      section.bg-white
+        h1 &#8759; The new GUI
+
+
+      section
+        h1 About
+        hr/
+        ul.ul-expanded
+          li React + Alt.js + Immutable.js logic
+          li ... + Socket.io
+          li Bootstrap + Bootflat UI
+          li it's in <b>alpha</b> stage
+          li it might not be open source
+
+
+      section
+        hr/
+        img.gui(src="img/new1.png")
+
+      section
+        hr/
+        img.gui(src="img/new2.png")
+
+      section
+        hr/
+        img.gui(src="img/new3.png")
+
+      section
+        hr/
+        img.gui(src="img/new4.png")
+
+      section
+        hr/
+        img.gui(src="img/new5.png")
+
+      section
+        hr/
+        img.gui(src="img/new6.png")
+
+
+      section.bg-white
+        h1(style="margin:0;color:#44B74A;") &#8759; About &nbsp;
+        // Image
+        img(src="img/flux.svg", style="width:300px;height:auto;margin:0")
+
+
+      section
+        h2 What is Flux #1
+        hr/
+        ul.ul-expanded
+          li a programming design pattern for the client
+          li similar with MVC
+          li with a strictly unidirectional data flow
+          li you can consider Flux to be the M and the C from MVC
+          li remember 4 words: dispatcher, action, store & view
+          li.bullet combined with React and Immutable, is forcing you to write maintainable code
+          li.bullet makes it very hard to write "hacker friendly" code
+
+
+      section
+        h2 What is Flux #2
+        ul
+          li helps you keep a simple mental model
+          li if the structure is complicated, it's much harder to scale in time
+          li Flux only yells: "hey something changed!"
+          li React re-renders everything from scratch
+          li the data should represent the interface perfectly
+          li the dispatcher is a pub/ sub that tells all the stores: "hey something happened!"
+          li actions are the only entry point into the system
+          li a store is data + logic for a logical domain
+          li a store has only GET, never a SET
+          li a store updates itself, when some important action is triggered
+          li the views get data from the store when something changed
+          li the event flow is unidirectional: dispatcher -> event -> store -> view
+
+
+      section
+        h1 ELI5
+        // Image
+        img(src="img/speaking-tube.jpg", style="margin:0")
+
+
+      section
+        h1 Advantages
+        hr/
+        ul.ul-expanded
+          li React + Flux helps you draw a simple structure
+          li you can explain the structure to non-programmers
+          li components are easy to plug-in and plug-out
+          li forces you to write <b>declarative code</b>
+          li is scalable in time
+          li easy to test (with Jest? API similar with Jasmine)
+
+
+      section
+        h1 This is a lie
+        img(src="img/flux1.jpg", style="width:710px;height:220px;")
+        ref
+          small Refecence: &nbsp;
+          small
+            a(href="http://facebook.github.io/flux/docs/overview.html",
+              target="_blank") Facebook.github.io/flux/docs/overview.html
+
+
+      section
+        h1 This is the truth
+        img(src="img/flux2.jpg", style="width:780px;height:400px;")
+        ref
+          small Refecence: &nbsp;
+          small
+            a(href="https://medium.com/brigade-engineering/what-is-the-flux-application-architecture-b57ebca85b9e",
+              target="_blank") Flux-application-architecture - Flarnie Marchan
+
+
+      section
+        h1 Disadvantages
+        hr/
+        ul.ul-expanded
+          li Flux is no silver bullet
+          li quite a lot of boilerplate (repeated code)
+          li Flux makes no sense with small apps;
+          li a "small" app written with Flux will probably become a "medium" app
+          li doesn't make sense on the server side;
+          li in some cases, is very hard to integrate with other libraries
+          li not even Facebook uses it everywhere
+
+
+      section
+        h1 Implementations
+        hr/
+        ul.ul-expanded
+          li Facebook Flux
+          li Yahoo Fluxible
+          li Fluxxor
+          li Alt.js
+          li the original Facebook Flux implementation is hard to understand and use
+          li we use <b>Alt.js</b>
+
+
+      section
+        h1 Dispatcher
+        br/
+        ul.ul-expanded
+          li.bullet the Dispatcher is just a class where you attach Actions and Stores
+          li.bullet ... and that's it, really
+
+
+      section
+        h2 Creating an Alt.js dispatcher
+        pre
+          code.language-javascript.
+            // Flux library
+            import Alt from 'alt/lib';
+
+            const alt = new Alt();
+
+            // Alt for debug
+            // ... can be used to access Actions and Stores in console
+            window.alt = alt;
+
+            // This instance is used by Actions and Stores
+            export default alt;
+
+
+      section
+        h1 Actions
+        ul.ul-expanded
+          li Actions should be the only entry in the system
+          li in Alt.js, you can have multiple action creators
+          li if it's a big app, separating action creators could be a good idea
+          li actions CANNOT be canceled, but you can cancel the propagation in the Store
+          li in Alt.js the Views can be directly connected to actions, without the Store
+
+
+      section
+        h2 Creating a simple action, with Alt.js
+        pre
+          code.language-javascript.
+            // The FLUX dispatcher instance
+            import alt from '../alt';
+
+            class GlobalsActions {
+
+              constructor() {
+                // The actions will just forward whatever data they are receiving
+                this.generateActions(
+                  'listProjectsSuccess',
+                  'listProjectsFailure'
+                );
+              }
+
+            }
+
+            export default alt.createActions(GlobalsActions);
+
+
+      section
+        h3 Async action with "Success" and "Failure"
+        pre
+          code.language-javascript.
+            listProjects() {
+
+                let self = this;
+
+                $.get("/api/browse/projects").done(
+                    function(data) {
+                        if (data.error)
+                            self.actions.listProjectsFailure(data.error);
+                        else
+                            self.actions.listProjectsSuccess(data);
+                }).fail(
+                    function(error) {
+                        self.actions.listProjectsFailure(error.statusText);
+                });
+
+                // Initial action
+                setTimeout(() => self.dispatch(), 1);
+            }
+
+
+      section
+        h1 Stores
+        ul.ul-expanded
+          li in Alt.js, all methods from the Store are private by default
+          li only the "getState" function is available
+          li a Store can cancel the propagation of an event by returning "false"
+          li a Store can contain a lot of structures;
+          li it can contain ALL the application data;
+          li it's a perfect match with Immutable.js
+          li you can implement apps with just 1 big Store
+          li.bullet a Store is not just a Model ...
+          li.bullet it's a SuperModel <img src="img/supermodel.jpg" style="width:33px;height:44px;margin:0;vertical-align:middle;")> !
+
+
+      section
+        h2 Creating a Store, with Alt.js
+        pre
+          code.language-javascript.
+            // The FLUX dispatcher instance
+            import alt from '../alt';
+            // The required actions
+            import GlobalsActions from '../actions/action.globals';
+
+            class ConfigStore {
+
+              constructor() {
+                // Bind all actions
+                this.bindActions(GlobalsActions);
+                this.loading = false;
+                this.selected = null;
+                this.data = [{ "title": "" }];
+              }
+
+            }
+
+
+      section
+        h2 The Store functions
+        pre
+          code.language-javascript.
+            onListGlobals() {
+              console.log("Store: Loading config list...");
+              this.loading = true;
+              this.data = [{ "title": "" }];
+            }
+
+            onListGlobalsSuccess(payload) {
+              console.log("Store: Config list OK.");
+              this.loading = false;
+              this.data = payload;
+            }
+
+            onListGlobalsFailure(error) {
+              console.log(`Store: Loading config list FAILED "${error}".`);
+              this.loading = false;
+              this.data = [{ "title": error }];
+            }
+
+
+      section
+        h3 Connecting a React View with the Store
+        pre
+          code.language-javascript.
+            class Application extends React.Component {
+
+              constructor() {
+                this.store = UserStore;
+                this.onChange = this.onChange.bind(this);
+              }
+
+              componentWillMount() {
+                UserActions.checkLogin();
+              }
+              componentDidMount() {
+                this.store.listen(this.onChange);
+              }
+              componentWillUnmount() {
+                this.store.unlisten(this.onChange);
+              }
+              onChange() {
+                this.setState(this.store.getState());
+              }
+
+            }
+
+
+      section.bg-white
+        h1 Integrate with
+        // Image
+        img(src="img/socket.io.svg", style="width:250px;height:auto;margin:0")
+
+
+      section
+        h2 Initialization
+        pre
+          code.language-javascript.
+            // On jQuery document ready ...
+            $(() => {
+
+              // Socket.io
+              window.socket = io.connect('http://127.0.0.1:8000/ws');
+              let socket = window.socket;
+
+              socket.on('push', function(data) {
+                // Push msg structure: {e: "EVENT_TYPE", data: {whatever: "..."}}
+                // console.log(`WS: Push event from server ::${data.e}`);
+                if ( data.e === 'MSG' )
+                  console.log(`WS MSG:: ${data.data.msg}`);
+                else
+                  WebSocketActions.ws(data);
+              });
+
+              // Other stuff ...
+              // Eg: delayed render the application, header, body, app tabs
+              React.render(React.createElement(Application, null), document.body);
+
+            });
+
+
+      section
+        h2 Hook the Store
+        pre
+          code.language-javascript.
+            constructor() {
+              // Bind actions
+              this.bindActions(WebSocketActions);
+              // Other stuff ...
+            }
+
+            onWs(data) {
+              /**
+              * On websocket event.
+              **/
+              if ( data.e === 'LIST_CONFIGS' ) {
+                console.log("Store:WS: Refresh config list.");
+                this.loading = false;
+                this.data = data.data.list;
+               }
+            }
+
+
+      section
+        h1 Conclusion
+        hr/
+        ul.ul-expanded
+          li Flux doesn't have many surprises
+          li (React will probably give you much more headaches)
+          li the hardest thing is to force yourself to respect the pattern
+
+
+      section
+        h1 Resources
+        hr/
+        ul.ul-expanded
+          li
+            a(href="https://github.com/luxoft/twister/" target="_blank") Luxoft/Twister
+            | &nbsp;;
+          li
+            a(href="http://alt.js.org/" target="_blank") Alt.js.org
+            | &nbsp;;
+          li
+            a(href="https://facebook.github.io/react/" target="_blank") Facebook.github.io/React
+            | &nbsp;;
+          li
+            a(href="http://facebook.github.io/immutable-js/" target="_blank") Facebook.github.io/Immutable-js
+            | &nbsp;;
+
+
+      section
+        h1 Thank you !
+          hr/
+          | ⎈
+
+
+    script
+      include node_modules/bespoke/dist/bespoke.min.js
+    script
+      include node_modules/bespoke-theme-voltaire/dist/bespoke-theme-voltaire.min.js
+    script
+      include node_modules/bespoke-keys/dist/bespoke-keys.min.js
+    script
+      include node_modules/bespoke-bullets/dist/bespoke-bullets.min.js
+    script
+      include node_modules/prismjs/components/prism-core.min.js
+    script
+      include node_modules/prismjs/components/prism-markup.min.js
+    script
+      include node_modules/prismjs/components/prism-clike.min.js
+    script
+      include node_modules/prismjs/components/prism-javascript.min.js
+
+
+    script.
+
+      var deck = bespoke.from("#presentation", [
+        bespoke.themes.voltaire(),
+        bespoke.plugins.keys(),
+        bespoke.plugins.bullets(".bullet")
+      ]);
+
+      var progressParent = document.createElement("div"),
+        progressBar = document.createElement("div"),
+        prop = "width";
+
+      progressParent.className = "bespoke-progress-parent";
+      progressBar.className = "bespoke-progress-bar";
+      progressParent.appendChild(progressBar);
+      deck.parent.appendChild(progressParent);
+
+      deck.on("activate", function(e) {
+        console.log("Open slide `" + e.index + " of " + (deck.slides.length-1) + "`.");
+        progressBar.style[prop] = (e.index * 100 / (deck.slides.length - 1)) + '%';
+        document.getElementById("txt-position").textContent = e.index + " / " + (deck.slides.length-1);
+        localStorage.setItem("#slide", e.index);
+      });
+
+      var slide = localStorage.getItem("#slide");
+      if (slide != null) {
+        console.log("Restore slide `" + slide + "`.")
+        deck.slide(slide);
+      };
+
+
+    style(type="text/css")
+      include static/style.css
+
+    //- Eof
